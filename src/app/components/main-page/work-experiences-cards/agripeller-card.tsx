@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 export default function WorkAgripellerCard() {
+	const [showMore, setShowMore] = useState(false);
+
 	return (
 		<div className="w-[95%] bg-white/10 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300">
 			{/* Header */}
@@ -32,39 +37,59 @@ export default function WorkAgripellerCard() {
 			</p>
 			{/* Some Images to show the website */}
 			<p className="mt-5 text-2xl">Some Features I had worked on:</p>
-			<div className="flex flex-col items-center justify-center mt-5">
-				<h3>Dashboard</h3>
-				<Image
-					src={"/assets/agripeller/agriepller-dashboard2.png"}
-					alt={"Agripeller Dashboard Page"}
-					width={600}
-					height={600}
-				/>
 
-				<h3 className="mt-5">Login (Desktop)</h3>
-				<Image
-					src={"/assets/agripeller/agripeller-login-desktop.png"}
-					alt={"Agripeller Dashboard Page"}
-					width={600}
-					height={600}
-				/>
-                <h3 className="mt-5">Login (Mobile)</h3>
-                <Image
-					src={"/assets/agripeller/agripeller-login-phone.png"}
-					alt={"Agripeller Dashboard Page"}
-					width={300}
-					height={300}
-				/>
+			{/* Show more feature */}
+			<Image
+				src="/assets/card/arrow_down_vector.svg"
+				alt="Arrow Up to collapse"
+				width={50}
+				height={50}
+				className={`${
+					showMore && "hidden"
+				} mt-5 ml-auto mr-auto animate-bounce-slow hover:scale-110 transition-transform duration-700`}
+				onClick={() => {
+					setShowMore(true);
+				}}
+			/>
 
-                {/* Collapse Arrow feature */}
-                <Image
-					src={"/assets/agripeller/agripeller-login-phone.png"}
-					alt={"Agripeller Dashboard Page"}
-					width={300}
-					height={300}
-				/>
-                
-			</div>
+			{showMore && (
+				<div className="flex flex-col items-center justify-center mt-5">
+					<h3>Dashboard</h3>
+					<Image
+						src={"/assets/agripeller/agriepller-dashboard2.png"}
+						alt={"Agripeller Dashboard Page"}
+						width={600}
+						height={600}
+					/>
+
+					<h3 className="mt-5">Login (Desktop)</h3>
+					<Image
+						src={"/assets/agripeller/agripeller-login-desktop.png"}
+						alt={"Agripeller Dashboard Page"}
+						width={600}
+						height={600}
+					/>
+					<h3 className="mt-5">Login (Mobile)</h3>
+					<Image
+						src={"/assets/agripeller/agripeller-login-phone.png"}
+						alt={"Agripeller Dashboard Page"}
+						width={300}
+						height={300}
+					/>
+
+					{/* Collapse Arrow feature */}
+					<Image
+						src="/assets/card/arrow_down_vector.svg"
+						alt="Arrow Up to collapse"
+						width={50}
+						height={50}
+						className={`mt-5 transform rotate-180 animate-bounce-slow hover:scale-110 transition-transform duration-700`}
+						onClick={() => {
+							setShowMore(false);
+						}}
+					/>
+				</div>
+			)}
 		</div>
 	);
 }
