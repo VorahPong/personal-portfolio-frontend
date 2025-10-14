@@ -1,6 +1,7 @@
 import Image from "next/image";
 import WorkTutorCard from "./work-experiences-cards/work-tutor-card";
 import WorkAgripellerCard from "./work-experiences-cards/agripeller-card";
+import ProjectCapstoneCard from "./projects-cards/capstone-card";
 
 export default function Body() {
 	return (
@@ -43,7 +44,7 @@ export default function Body() {
 						Work Experiences
 					</span>
 					<Image
-						src="/assets/briefcase_vector.svg"
+						src="/assets/card/briefcase_vector.svg"
 						alt="Briefcase icon"
 						width={48}
 						height={48}
@@ -62,6 +63,28 @@ export default function Body() {
 			</div>
 
 			{/* Personal Projects */}
+			<div className="bg-cyan-900 w-[95%] mt-20 rounded-2xl flex flex-col items-center py-10 shadow-lg">
+				{/* Header Section */}
+				<div className="flex items-center justify-center gap-4 mb-4 bg-cyan-700 py-2 px-6 rounded-2xl shadow-cyan-600 shadow-md">
+					<span className="text-white text-2xl font-semibold tracking-wide">
+						Projects
+					</span>
+					<Image
+						src="/assets/card/folder_vector.svg"
+						alt="Briefcase icon"
+						width={48}
+						height={48}
+						className="hover:scale-110 transition-transform duration-300"
+					/>
+				</div>
+
+				{/* Divider */}
+				<div className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 w-[85%] h-0.5 mb-6 rounded-full shadow-md"></div>
+
+				{/* Cards Section */}
+				<ProjectCapstoneCard/>
+
+			</div>
 		</div>
 	);
 }

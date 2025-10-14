@@ -41,7 +41,7 @@ export default function NavigationBar() {
 					aria-label="GitHub Profile"
 				>
 					<Image
-						src="/assets/logo/GitHubIcon.svg"
+						src="/assets/logo/github.svg"
 						alt="GitHub Icon"
 						width={30}
 						height={30}
@@ -56,10 +56,10 @@ export default function NavigationBar() {
 					aria-label="LinkedIn Profile"
 				>
 					<Image
-						src="/assets/logo/LinkedInIcon.svg"
+						src="/assets/logo/linkedin_vector.svg"
 						alt="LinkedIn Icon"
-						width={30}
-						height={30}
+						width={35}
+						height={35}
 						className="hover:opacity-80 transition-opacity duration-200"
 					/>
 				</Link>
