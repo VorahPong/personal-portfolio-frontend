@@ -8,7 +8,7 @@ export default function Body() {
 			{/* Profile + Note card container */}
 			<div className="flex flex-col md:flex-row items-center justify-center gap-10">
 				{/* Profile Card */}
-				<div className="relative w-80 h-56 bg-white border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center">
+				<div className="relative w-80 h-56 bg-gray-100 border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center">
 					<div className="w-28 h-28 rounded-full overflow-hidden border-2 border-gray-300">
 						<Image
 							src="/assets/vorahpongPhoto.svg"
@@ -25,7 +25,7 @@ export default function Body() {
 				</div>
 
 				{/* Note Card */}
-				<div className="bg-white w-96 h-56 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center">
+				<div className="bg-gray-100 w-96 h-56 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center">
 					<h3 className="text-xl font-semibold text-gray-800 mb-2">About Me</h3>
 					<p className="text-gray-600 leading-relaxed">
 						Hello! I’m Vorahpong Mean, a Computer Science student passionate
@@ -36,9 +36,9 @@ export default function Body() {
 			</div>
 
 			{/* Work Experiences */}
-			<div className="bg-black w-[95%] mt-20 rounded-2xl flex flex-col items-center py-10 shadow-lg">
+			<div className="bg-[#0B0B0B] w-[95%] mt-20 rounded-2xl flex flex-col items-center py-10 shadow-lg">
 				{/* Header Section */}
-				<div className="flex items-center justify-center gap-4 mb-4 bg-amber-700 py-2 px-6 rounded-2xl">
+				<div className="flex items-center justify-center gap-4 mb-4 bg-amber-700 py-2 px-6 rounded-2xl shadow-amber-900 shadow-md">
 					<span className="text-white text-2xl font-semibold tracking-wide">
 						Work Experiences
 					</span>
