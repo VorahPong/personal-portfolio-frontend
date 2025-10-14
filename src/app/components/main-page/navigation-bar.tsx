@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NavigationBar() {
 	return (
-		<nav className="w-full flex justify-between items-center bg-black px-8 py-4 text-lg font-semibold text-white shadow-md">
+		<nav className="w-full flex justify-between items-center bg-[#1E1E24] px-8 py-4 text-lg font-semibold text-white shadow-md">
 			{/* Left Section */}
 			<div className="flex gap-8 items-center">
 				<div className="flex items-center gap-2">
@@ -16,7 +16,7 @@ export default function NavigationBar() {
 					/>
 				</div>
 
-				<div className="flex gap-6">
+				<div className="flex gap-6 text-[#F5F749]">
 					<Link
 						href="/"
 						className="hover:text-yellow-400 transition-colors duration-200"

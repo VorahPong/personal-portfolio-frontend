@@ -1,10 +1,12 @@
 import Image from "next/image";
+import WorkTutorCard from "./work-experiences-cards/work-tutor-card";
+import WorkAgripellerCard from "./work-experiences-cards/agripeller-card";
 
 export default function Body() {
 	return (
 		<div className="w-full h-full flex flex-col items-center py-20">
 			{/* Profile + Note card container */}
-		    <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+			<div className="flex flex-col md:flex-row items-center justify-center gap-10">
 				{/* Profile Card */}
 				<div className="relative w-80 h-56 bg-white border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center">
 					<div className="w-28 h-28 rounded-full overflow-hidden border-2 border-gray-300">
@@ -33,9 +35,33 @@ export default function Body() {
 				</div>
 			</div>
 
-            {/* Work Experiences */}
+			{/* Work Experiences */}
+			<div className="bg-black w-[95%] mt-20 rounded-2xl flex flex-col items-center py-10 shadow-lg">
+				{/* Header Section */}
+				<div className="flex items-center justify-center gap-4 mb-4 bg-amber-700 py-2 px-6 rounded-2xl">
+					<span className="text-white text-2xl font-semibold tracking-wide">
+						Work Experiences
+					</span>
+					<Image
+						src="/assets/briefcase_vector.svg"
+						alt="Briefcase icon"
+						width={48}
+						height={48}
+						className="hover:scale-110 transition-transform duration-300"
+					/>
+				</div>
 
-            {/* Personal Projects */}
+				{/* Divider */}
+				<div className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 w-[85%] h-0.5 mb-6 rounded-full shadow-md"></div>
+
+				{/* Cards Section */}
+				<WorkAgripellerCard/>
+				<div className="mt-10"/>
+				<WorkTutorCard/>
+
+			</div>
+
+			{/* Personal Projects */}
 		</div>
 	);
 }
