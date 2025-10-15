@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavigationBar() {
+	const pathname = usePathname();
 	return (
 		<nav className="w-full flex justify-between items-center bg-white px-8 py-4 text-lg font-semibold text-white shadow-md">
 			{/* Left Section */}
@@ -16,16 +19,24 @@ export default function NavigationBar() {
 					/>
 				</div>
 
-				<div className="flex gap-6 text-black">
+				<div className="flex gap-2 text-black">
 					<Link
 						href="/"
-						className="hover:text-yellow-400 transition-colors duration-200"
+						className={`transition-colors duration-200 px-2 ${
+							pathname === "/"
+								? "bg-amber-200 rounded-md"
+								: "hover:text-yellow-400"
+						}`}
 					>
 						Home
 					</Link>
 					<Link
 						href="/resume"
-						className="hover:text-yellow-400 transition-colors duration-200"
+						className={`transition-colors duration-200 px-2 ${
+							pathname === "/resume"
+								? "bg-amber-200 rounded-md"
+								: "hover:text-yellow-400"
+						}`}
 					>
 						Resume
 					</Link>
