@@ -39,6 +39,8 @@ export default function Body() {
 						Vorahpong Mean
 					</p>
 					<p className="text-sm text-gray-500">Cameron University</p>
+					<p className="text-xs text-gray-500 mt-2 hover:scale-110">See more...</p>
+
 				</motion.div>
 
 				{/* Note Card */}
@@ -55,6 +57,7 @@ export default function Body() {
 						about full-stack development and UI/UX design. I enjoy building
 						interactive web apps and learning new technologies.
 					</p>
+					<p className="text-xs text-gray-500 mt-2 hover:scale-110">See more...</p>
 				</motion.div>
 			</div>
 
