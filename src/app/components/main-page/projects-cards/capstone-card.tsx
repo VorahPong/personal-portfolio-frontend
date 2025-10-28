@@ -17,8 +17,8 @@ export default function ProjectCapstoneCard() {
 						HTML, CSS, JavaScript, SQL, PHP, XAMPP
 					</span>
 				</h3>
+				{/* Date if has */}
 				<span className="text-sm text-gray-300 font-medium">
-					Feb – May 2025
 				</span>
 			</div>
 
@@ -45,7 +45,7 @@ export default function ProjectCapstoneCard() {
 				height={50}
 				className={`${
 					showMore && "hidden"
-				} mt-5 ml-auto mr-auto animate-bounce-slow hover:scale-110 transition-transform duration-700`}
+				} animate-float-up mt-5 ml-auto mr-auto animate-bounce-slow hover:scale-110 transition-transform duration-700 hover-pause`}
 				onClick={() => {
 					setShowMore(true);
 				}}
@@ -55,25 +55,18 @@ export default function ProjectCapstoneCard() {
 				<div className="flex flex-col items-center justify-center mt-5">
 					<h3>Dashboard</h3>
 					<Image
-						src={"/assets/agripeller/agriepller-dashboard2.png"}
-						alt={"Agripeller Dashboard Page"}
+						src={"/assets/capstone/capstoneProgNew.png"}
+						alt={"Capstone's project Dashboard Page"}
 						width={600}
 						height={600}
 					/>
 
 					<h3 className="mt-5">Login (Desktop)</h3>
 					<Image
-						src={"/assets/agripeller/agripeller-login-desktop.png"}
-						alt={"Agripeller Dashboard Page"}
+						src={"/assets/capstone/newLogin.png"}
+						alt={"Capstone's project Dashboard Page"}
 						width={600}
 						height={600}
-					/>
-					<h3 className="mt-5">Login (Mobile)</h3>
-					<Image
-						src={"/assets/agripeller/agripeller-login-phone.png"}
-						alt={"Agripeller Dashboard Page"}
-						width={300}
-						height={300}
 					/>
 
 					{/* Collapse Arrow feature */}
@@ -82,7 +75,7 @@ export default function ProjectCapstoneCard() {
 						alt="Arrow Up to collapse"
 						width={50}
 						height={50}
-						className={`mt-5 transform rotate-180 animate-bounce-slow hover:scale-110 transition-transform duration-700`}
+						className={`animate-float-down mt-5 transform rotate-180 animate-bounce-slow hover:scale-110 transition-transform duration-700 hover-pause`}
 						onClick={() => {
 							setShowMore(false);
 						}}

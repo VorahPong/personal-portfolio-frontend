@@ -5,6 +5,7 @@ import WorkTutorCard from "./work-experiences-cards/work-tutor-card";
 import WorkAgripellerCard from "./work-experiences-cards/agripeller-card";
 import ProjectCapstoneCard from "./projects-cards/capstone-card";
 import { motion } from "framer-motion";
+import Project3DConnectFourCard from "./projects-cards/3dconnect-card";
 
 export default function Body() {
 	return (
@@ -103,6 +104,8 @@ export default function Body() {
 
 				{/* Cards Section */}
 				<ProjectCapstoneCard />
+				<div className="mt-10" />
+				<Project3DConnectFourCard/>
 			</div>
 		</motion.div>
 	);
