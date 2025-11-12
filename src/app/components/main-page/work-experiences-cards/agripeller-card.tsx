@@ -3,31 +3,17 @@
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import MotionCard from "../projects-cards/motion-card";
+import { useCollapseScroll } from "@/app/hooks/use-collapse-scroll";
 
 export default function WorkAgripellerCard() {
 	const [showMore, setShowMore] = useState(false);
 	const cardRef = useRef<HTMLDivElement>(null);
-	const didMount = useRef(false);
 
-	// When collapsing, bring the card back into view (skip first render)
-	useEffect(() => {
-		// skip first render
-		if (!didMount.current) {
-			didMount.current = true;
-			return;
-		}
-		// bring card back up after collapse
-		if (!showMore && cardRef.current) {
-			cardRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-		}
-	}, [showMore]);
+	useCollapseScroll(showMore, cardRef, { behavior: "smooth", block: "start" }); // scroll back to when the card was after collapse
 
 	return (
-		<div
-			ref={cardRef}
-			className="scroll-mt-24 w-[95%] bg-white/10 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300"
-		>
-			<MotionCard className="">
+		<div ref={cardRef} className="scroll-mt-30 w-[95%] bg-white/10 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300">
+			<MotionCard>
 				{/* Header */}
 				<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
 					<h3 className="text-lg font-semibold tracking-wide">
