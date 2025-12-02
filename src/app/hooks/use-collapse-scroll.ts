@@ -17,14 +17,23 @@ export function useCollapseScroll<T extends HTMLElement>(
 	} = {}
 ) {
 	const didMount = useRef(false);
+	const prevExpanded = useRef(expanded);
 
 	useEffect(() => {
 		if (!enabled) return;
+
 		if (skipFirstRender && !didMount.current) {
 			didMount.current = true;
+			// initialize previous value on first render
+			prevExpanded.current = expanded;
 			return;
 		}
-		if (!expanded && ref.current) {
+
+		const wasExpanded = prevExpanded.current;
+		prevExpanded.current = expanded;
+
+		// Only scroll when it changed from true -> false
+		if (wasExpanded && !expanded && ref.current) {
 			requestAnimationFrame(() => {
 				ref.current?.scrollIntoView({ behavior, block });
 			});
