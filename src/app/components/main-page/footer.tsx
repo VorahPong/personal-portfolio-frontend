@@ -7,7 +7,7 @@ export default function Footer() {
 					<a
 						href="mailto:vorahpongmean@gmail.com"
 						className="hover:text-amber-600 transition-colors duration-200"
-					>
+						>
 						vorahpongmean@gmail.com
 					</a>
 					{"	"}✉️
@@ -19,6 +19,12 @@ export default function Footer() {
 					© {new Date().getFullYear()}{" "}
 					<span className="font-semibold text-gray-900">Vorahpong Mean</span> —
 					Thank you for visiting!
+				</span>
+			</div>
+
+			<div className="mt-2">
+				<span className="italic">
+					Last updated: Dec 25, 2025
 				</span>
 			</div>
 		</footer>
