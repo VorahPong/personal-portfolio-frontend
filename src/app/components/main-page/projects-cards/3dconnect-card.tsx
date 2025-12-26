@@ -15,7 +15,7 @@ export default function Project3DConnectFourCard() {
 	return (
 		<div
 			ref={cardRef}
-			className="scroll-mt-30 w-[95%] bg-white/10 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300"
+			className="scroll-mt-30 w-[95%] bg-black/30 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300"
 		>
 			<MotionCard>
 				{/* Header */}
@@ -28,8 +28,15 @@ export default function Project3DConnectFourCard() {
 							Unity, C#, Blender
 						</span>
 					</h3>
-					{/* Date if has */}
-					<span className="text-sm text-gray-300 font-medium"></span>
+					{/* Github link */}
+					<a
+						href="https://github.com/VorahPong/ConnectFourUnity"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-sm text-green-300 font-bold hover:text-white"
+					>
+						🔗 View on GitHub
+					</a>
 				</div>
 				{/* Divider */}
 				<div className="w-full h-[1px] bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 mb-3 rounded-full opacity-70"></div>
@@ -42,7 +49,7 @@ export default function Project3DConnectFourCard() {
 					actions.
 				</p>
 				{/* Some Images to show the website */}
-				<p className="mt-5 text-2xl">Some Features I had worked on:</p>
+				
 				{/* Show more feature */}
 				<Image
 					src="/assets/card/arrow_down_vector.svg"
