@@ -59,14 +59,14 @@ export default function ProjectCapstoneCard() {
 				/>
 				{showMore && (
 					<div className="flex flex-col items-center justify-center mt-5">
-						<h3>Dashboard</h3>
+						<h3>Dashboard UI</h3>
 						<Image
 							src={"/assets/capstone/capstoneProgNew.png"}
 							alt={"Capstone's project Dashboard Page"}
 							width={600}
 							height={600}
 						/>
-						<h3 className="mt-5">Login (Desktop)</h3>
+						<h3 className="mt-5">Login UI(Desktop)</h3>
 						<Image
 							src={"/assets/capstone/newLogin.png"}
 							alt={"Capstone's project Dashboard Page"}

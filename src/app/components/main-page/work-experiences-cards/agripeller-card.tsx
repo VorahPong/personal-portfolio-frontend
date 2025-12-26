@@ -15,7 +15,7 @@ export default function WorkAgripellerCard() {
 	return (
 		<div
 			ref={cardRef}
-			className="scroll-mt-30 w-[95%] bg-white/10 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300"
+			className="scroll-mt-30 w-[95%] bg-green-500/10 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300"
 		>
 			<MotionCard>
 				{/* Header */}
@@ -61,21 +61,21 @@ export default function WorkAgripellerCard() {
 				/>
 				{showMore && (
 					<div className="flex flex-col items-center justify-center mt-5">
-						<h3>Dashboard</h3>
+						<h3>Dashboard UI & Features</h3>
 						<Image
 							src={"/assets/agripeller/agriepller-dashboard2.png"}
 							alt={"Agripeller Dashboard Page"}
 							width={600}
 							height={600}
 						/>
-						<h3 className="mt-5">Login (Desktop)</h3>
+						<h3 className="mt-5">Login UI (Desktop)</h3>
 						<Image
 							src={"/assets/agripeller/agripeller-login-desktop.png"}
 							alt={"Agripeller Dashboard Page"}
 							width={600}
 							height={600}
 						/>
-						<h3 className="mt-5">Login (Mobile)</h3>
+						<h3 className="mt-5">Login UI (Mobile)</h3>
 						<Image
 							src={"/assets/agripeller/agripeller-login-phone.png"}
 							alt={"Agripeller Dashboard Page"}
