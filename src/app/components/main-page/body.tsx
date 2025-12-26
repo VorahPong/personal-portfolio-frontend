@@ -6,6 +6,7 @@ import WorkAgripellerCard from "./work-experiences-cards/agripeller-card";
 import ProjectCapstoneCard from "./projects-cards/capstone-card";
 import { motion } from "framer-motion";
 import Project3DConnectFourCard from "./projects-cards/3dconnect-card";
+import GodotCard from "./projects-cards/godotgame-card";
 
 export default function Body() {
 	return (
@@ -106,9 +107,12 @@ export default function Body() {
 				<div className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 w-[85%] h-0.5 mb-6 rounded-full shadow-md"></div>
 
 				{/* Cards Section */}
+				<GodotCard/>
+				<div className="mt-10" />
 				<ProjectCapstoneCard />
 				<div className="mt-10" />
 				<Project3DConnectFourCard/>
+
 			</div>
 		</motion.div>
 	);
