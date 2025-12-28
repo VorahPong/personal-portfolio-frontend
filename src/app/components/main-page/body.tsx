@@ -7,8 +7,12 @@ import ProjectCapstoneCard from "./projects-cards/capstone-card";
 import { motion } from "framer-motion";
 import Project3DConnectFourCard from "./projects-cards/3dconnect-card";
 import GodotCard from "./projects-cards/godotgame-card";
+import { useState } from "react";
 
 export default function Body() {
+	const [showMoreProfile, setShowMoreProfile] = useState(false);
+	const [showMoreDescription, setShowMoreDescription] = useState(false);
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 90 }}
@@ -25,7 +29,7 @@ export default function Body() {
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.2 }}
 					transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
-					className="relative w-80 h-56 bg-gray-100 border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center"
+					className="relative w-80 h-fit py-5 bg-gray-100 border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center"
 				>
 					<div className="w-28 h-28 rounded-full overflow-hidden border-2 border-gray-300">
 						<Image
@@ -40,8 +44,37 @@ export default function Body() {
 						Vorahpong Mean
 					</p>
 					<p className="text-sm text-gray-500">Cameron University</p>
-					<p className="text-xs text-gray-500 mt-2 hover:scale-110">See more...</p>
 
+					<button
+						onClick={() => {
+							setShowMoreProfile(true);
+						}}
+						className={` ${
+							showMoreProfile ? "hidden" : "block"
+						} text-xs text-gray-500 mt-2 hover:scale-110`}
+					>
+						<span>See more...</span>
+					</button>
+
+					{showMoreProfile ? (
+						<p className="text-sm mt-5 text-gray-700">
+							Age: 21 <br />
+							Ethnicity: Cambodian <br />
+							School: Cameron University <br />
+							Graudate: May 09, 2025 <br />
+							Skills: C++, C#, Javascript, typescript <br />
+							<button
+								className="w-full mt-2"
+								onClick={() => {
+									setShowMoreProfile(false);
+								}}
+							>
+								<span>Show less...</span>
+							</button>
+						</p>
+					) : (
+						<></>
+					)}
 				</motion.div>
 
 				{/* Note Card */}
@@ -50,7 +83,7 @@ export default function Body() {
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.2 }}
 					transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
-					className="bg-gray-100 w-96 h-56 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center"
+					className="bg-gray-100 w-96 h-fit py-5 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center"
 				>
 					<h3 className="text-xl font-semibold text-gray-800 mb-2">About Me</h3>
 					<p className="text-gray-600 leading-relaxed">
@@ -58,7 +91,15 @@ export default function Body() {
 						about full-stack development and UI/UX design. I enjoy building
 						interactive web apps and learning new technologies.
 					</p>
-					<p className="text-xs text-gray-500 mt-2 hover:scale-110">See more...</p>
+
+					<button
+						className="text-xs text-gray-500 mt-2 hover:scale-110"
+						onClick={() => {
+							setShowMoreDescription(true);
+						}}
+					>
+						<span>See more...</span>
+					</button>
 				</motion.div>
 			</div>
 
@@ -107,12 +148,11 @@ export default function Body() {
 				<div className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 w-[85%] h-0.5 mb-6 rounded-full shadow-md"></div>
 
 				{/* Cards Section */}
-				<GodotCard/>
+				<GodotCard />
 				<div className="mt-10" />
 				<ProjectCapstoneCard />
 				<div className="mt-10" />
-				<Project3DConnectFourCard/>
-
+				<Project3DConnectFourCard />
 			</div>
 		</motion.div>
 	);
