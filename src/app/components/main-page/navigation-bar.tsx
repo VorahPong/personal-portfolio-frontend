@@ -64,7 +64,7 @@ export default function NavigationBar() {
 						alt="GitHub Icon"
 						width={30}
 						height={30}
-						className="hover:opacity-80 transition-opacity duration-200 hover:scale-110"
+						className="hover:opacity-80 transition duration-200 hover:scale-110"
 					/>
 				</Link>
 
@@ -79,7 +79,7 @@ export default function NavigationBar() {
 						alt="LinkedIn Icon"
 						width={35}
 						height={35}
-						className="hover:opacity-80 transition-opacity duration-200 hover:scale-110"
+						className="hover:opacity-80 transition duration-200 hover:scale-110"
 					/>
 				</Link>
 			</div>
