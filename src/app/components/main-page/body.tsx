@@ -29,7 +29,7 @@ export default function Body() {
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.2 }}
 					transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
-					className="relative w-80 h-fit py-5 bg-gray-100 border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center"
+					className="relative w-80 h-fit py-5 bg-gray-100 border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-102 transition"
 				>
 					<div className="w-28 h-28 rounded-full overflow-hidden border-2 border-gray-300">
 						<Image
@@ -88,7 +88,7 @@ export default function Body() {
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true, amount: 0.2 }}
 					transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
-					className="bg-gray-100 w-96 h-fit py-5 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center"
+					className="bg-gray-100 w-96 h-fit py-5 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center hover:scale-102 transition"
 				>
 					<h3 className="text-xl font-semibold text-gray-800 mb-2">About Me</h3>
 					<p className="text-gray-600 leading-relaxed">
