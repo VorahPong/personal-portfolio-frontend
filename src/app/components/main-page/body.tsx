@@ -51,27 +51,32 @@ export default function Body() {
 						}}
 						className={` ${
 							showMoreProfile ? "hidden" : "block"
-						} text-xs text-gray-500 mt-2 hover:scale-110`}
+						} text-xs text-gray-500 mt-2 hover:scale-110 transition`}
 					>
 						<span>See more...</span>
 					</button>
 
 					{showMoreProfile ? (
-						<p className="text-sm mt-5 text-gray-700">
-							Age: 21 <br />
-							Ethnicity: Cambodian <br />
-							School: Cameron University <br />
-							Graudate: May 09, 2025 <br />
-							Skills: C++, C#, Javascript, typescript <br />
+						<>
+							<div className="w-full mt-3 h-px bg-black/30 shadow-2xl" />
+
+							<p className="text-sm mt-3 text-gray-700 m-4">
+								Age: 21 <br />
+								School: Cameron University <br />
+								Graduation: May 2026 <br />
+								Focus: Full-Stack & Front-End Development <br />
+								Tech Stack: Next.js, React, Tailwind, MongoDB, PostgreSQL <br />
+								Location: Lawton, OK (Open to move)
+							</p>
 							<button
-								className="w-full mt-2"
+								className="w-full mt-2 text-xs text-gray-500 hover:scale-110 transition"
 								onClick={() => {
 									setShowMoreProfile(false);
 								}}
 							>
 								<span>Show less...</span>
 							</button>
-						</p>
+						</>
 					) : (
 						<></>
 					)}
