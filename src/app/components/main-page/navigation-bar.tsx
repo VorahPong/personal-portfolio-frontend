@@ -126,9 +126,9 @@ export default function NavigationBar() {
 						📄 Resume
 					</Link>
 					<hr className="border-gray-700 my-2" />
-					<p className="text-gray-400 text-sm">
+					{/* <p className="text-gray-400 text-sm">
 						(In-progress)
-					</p>
+					</p> */}
 				</div>
 			</div>
 		</nav>
