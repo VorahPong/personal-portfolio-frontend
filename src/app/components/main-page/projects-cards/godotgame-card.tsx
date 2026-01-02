@@ -15,7 +15,7 @@ export default function GodotCard() {
 	return (
 		<div
 			ref={cardRef}
-			className="scroll-mt-30 w-[95%] bg-green-800/40 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300"
+			className="scroll-mt-30 w-[95%] bg-green-800/40 border border-amber-400 rounded-xl text-white p-5 shadow-md hover:shadow-amber-400/30 transition-all duration-300 hover:scale-101"
 		>
 			<MotionCard>
 				{/* Header */}
