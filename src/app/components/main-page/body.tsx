@@ -92,14 +92,14 @@ export default function Body() {
 						interactive web apps and learning new technologies.
 					</p>
 
-					<button
-						className="text-xs text-gray-500 mt-2 hover:scale-110"
+					{/* <button
+						className={`${showMoreDescription ? 'hidden' : 'block'} text-xs text-gray-500 mt-2 hover:scale-110`}
 						onClick={() => {
 							setShowMoreDescription(true);
 						}}
 					>
 						<span>See more...</span>
-					</button>
+					</button> */}
 				</motion.div>
 			</div>
 
