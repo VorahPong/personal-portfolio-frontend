@@ -61,27 +61,57 @@ export default function WorkAgripellerCard() {
 				/>
 				{showMore && (
 					<div className="flex flex-col items-center justify-center mt-5">
-						<h3>Dashboard UI & Features</h3>
+						<h3 className="mt-5 font-semibold">
+							Figma Dashboard (Designer Handoff)
+						</h3>
+						<p className="text-sm text-gray-300 mt-1 max-w-xl text-center">
+							Used as the design source of truth. I translated this layout into
+							a responsive dashboard while preserving spacing, hierarchy, and
+							accessibility.
+						</p>
+						<Image
+							src={"/assets/agripeller/agripeller-dashboard-figma.png"}
+							alt={"Agripeller Figma Design"}
+							width={600}
+							height={600}
+							className="mt-5"
+						/>
+
+						<h3 className="mt-5">Dashboard UI & Features</h3>
 						<Image
 							src={"/assets/agripeller/agriepller-dashboard2.png"}
 							alt={"Agripeller Dashboard Page"}
 							width={600}
 							height={600}
 						/>
-						<h3 className="mt-5">Login UI (Desktop)</h3>
+
+						<h3 className="mt-5 font-semibold">Login UI (Desktop)</h3>
+						<p className="text-sm text-gray-300 mt-1 max-w-xl text-center">
+							Built with responsive layouts and consistent form validation.
+							Optimized for desktop usability while matching the original Figma
+							design.
+						</p>
 						<Image
 							src={"/assets/agripeller/agripeller-login-desktop.png"}
 							alt={"Agripeller Dashboard Page"}
 							width={600}
 							height={600}
+							className="mt-5"
 						/>
-						<h3 className="mt-5">Login UI (Mobile)</h3>
+
+						<h3 className="mt-5 font-semibold">Login UI (Mobile)</h3>
+						<p className="text-sm text-gray-300 mt-1 max-w-xl text-center">
+							Adapted the desktop layout into a mobile-first design with stacked
+							inputs, larger tap targets, and improved readability.
+						</p>
 						<Image
 							src={"/assets/agripeller/agripeller-login-phone.png"}
 							alt={"Agripeller Dashboard Page"}
 							width={300}
 							height={300}
+							className="mt-5"
 						/>
+
 						{/* Collapse Arrow feature */}
 						<Image
 							src="/assets/card/arrow_down_vector.svg"
