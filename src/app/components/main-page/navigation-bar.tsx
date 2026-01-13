@@ -48,6 +48,16 @@ export default function NavigationBar() {
 					>
 						Resume
 					</Link>
+					<Link
+						href="/leetcode"
+						className={`transition-colors duration-200 px-2 ${
+							pathname === "/leetcode"
+								? "bg-amber-200 rounded-md"
+								: "hover:text-yellow-400"
+						}`}
+					>
+						LeetCode
+					</Link>
 				</div>
 			</div>
 
