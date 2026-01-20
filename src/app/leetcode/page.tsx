@@ -15,10 +15,31 @@ type LeetCodeStats = {
 	ranking: number;
 };
 
+type Note = {
+	id: string;
+	title: string; // e.g. "853. Car Fleet"
+	topic?: string; // e.g. "Stack / Monotonic stack"
+	takeaway: string; // 1–2 sentences
+	link?: string; // optional leetcode link
+	date?: string; // optional "2026-01-20"
+};
+
+const notes: Note[] = [
+	{
+		id: "car-fleet",
+		title: "853. Car Fleet",
+		topic: "Stack (Monotonic)",
+		takeaway:
+			"Sort cars by position descending, compute time-to-target (target - position) / speed, and use a stack to count fleets.",
+		link: "https://leetcode.com/problems/car-fleet/",
+		date: "2026-01-20",
+	},
+];
+
 export default async function LeetCodePage() {
 	const res = await fetch(
 		`https://leetcode-stats-api.herokuapp.com/vorahpong`,
-		{}
+		{},
 	);
 
 	if (!res.ok)
@@ -108,6 +129,58 @@ export default async function LeetCodePage() {
 						</div>
 					</div>
 				</div>
+
+				<section className="bg-[#282828] m-10 border-amber-200 border-r-2 rounded-2xl">
+					<div className="p-8">
+						<div className="flex items-center justify-between">
+							<h2 className="text-2xl font-bold text-amber-300">Notes</h2>
+							<span className="text-sm text-white/50">
+								{notes.length} {notes.length === 1 ? "note" : "notes"}
+							</span>
+						</div>
+
+						<div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+							{notes.map((n) => (
+								<div
+									key={n.id}
+									className="rounded-xl border border-white/10 bg-black/20 p-5 hover:bg-black/30 transition"
+								>
+									<div className="flex items-start justify-between gap-3">
+										<div>
+											<div className="text-white font-semibold">{n.title}</div>
+											{n.topic && (
+												<div className="mt-1 text-xs text-white/50">
+													{n.topic}
+												</div>
+											)}
+										</div>
+
+										{n.date && (
+											<span className="text-xs text-white/40 whitespace-nowrap">
+												{n.date}
+											</span>
+										)}
+									</div>
+
+									<p className="mt-4 text-sm text-[#bebfc2] leading-relaxed">
+										{n.takeaway}
+									</p>
+
+									{n.link && (
+										<Link
+											href={n.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="mt-4 inline-block text-sm text-amber-200 hover:underline"
+										>
+											View problem →
+										</Link>
+									)}
+								</div>
+							))}
+						</div>
+					</div>
+				</section>
 			</main>
 			<Footer />
 		</div>
