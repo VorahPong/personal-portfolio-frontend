@@ -8,7 +8,7 @@ export default function ResumePage() {
 			<main className="flex-1">
                 
 				<div className="mt-10 ml-20 text-white text-lg">
-                    <h1>Last updated: <span className="font-semibold text-amber-300">Oct 15, 2025</span></h1>
+                    <h1>Last updated: <span className="font-semibold text-amber-300">Jan 20, 2026</span></h1>
                     <Link href={pdf} download className="underline">
                         Download PDF
                     </Link>
