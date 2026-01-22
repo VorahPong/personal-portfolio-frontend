@@ -34,6 +34,15 @@ const notes: Note[] = [
 		link: "https://leetcode.com/problems/car-fleet/",
 		date: "2026-01-20",
 	},
+	{
+		id: "largest-rectangle-in-histogram",
+		title: "84. Largest Rectangle in Histogram",
+		topic: "Stack",
+		takeaway:
+			"Use a monotonic increasing stack to compute maximal contiguous areas in O(n) by delaying area calculation until boundaries are known.",
+		link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+		date: "2026-01-22",
+	},
 ];
 
 export default async function LeetCodePage() {
