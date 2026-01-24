@@ -19,7 +19,7 @@ type Note = {
 	id: string;
 	title: string; // e.g. "853. Car Fleet"
 	topic?: string; // e.g. "Stack / Monotonic stack"
-	takeaway: string; // 1–2 sentences
+	takeaway: React.ReactNode; // 1–2 sentences
 	link?: string; // optional leetcode link
 	date?: string; // optional "2026-01-20"
 };
@@ -42,6 +42,20 @@ const notes: Note[] = [
 			"Use a monotonic increasing stack to compute maximal contiguous areas in O(n) by delaying area calculation until boundaries are known.",
 		link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
 		date: "2026-01-22",
+	},
+	{
+		id: "binary-search",
+		title: "704. Binary Search",
+		topic: "Binary Search",
+		takeaway: (
+			<>
+				Formula: <code>low + (high - low) / 2</code>
+				<br />
+				Loop while <code>(low &lt;= high)</code>
+			</>
+		),
+		link: "https://leetcode.com/problems/binary-search/",
+		date: "2026-01-24",
 	},
 ];
 
