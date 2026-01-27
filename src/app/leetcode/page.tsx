@@ -57,6 +57,18 @@ const notes: Note[] = [
 		link: "https://leetcode.com/problems/binary-search/",
 		date: "2026-01-24",
 	},
+		{
+		id: "search-a-2d-matrix",
+		title: "74. Search a 2D Matrix",
+		topic: "Binary Search",
+		takeaway: (
+			<>
+				First go through every row to find the correct row where the target could be then perform binary search on that row.
+			</>
+		),
+		link: "https://leetcode.com/problems/search-a-2d-matrix/",
+		date: "2026-01-26",
+	},
 ];
 
 export default async function LeetCodePage() {
