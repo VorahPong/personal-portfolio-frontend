@@ -42,16 +42,29 @@ export const notes: Note[] = [
 		link: "https://leetcode.com/problems/binary-search/",
 		date: "2026-01-24",
 	},
-		{
+	{
 		id: "search-a-2d-matrix",
 		title: "74. Search a 2D Matrix",
 		topic: "Binary Search",
 		takeaway: (
 			<>
-				First go through every row to find the correct row where the target could be then perform binary search on that row.
+				First go through every row to find the correct row where the target
+				could be then perform binary search on that row.
 			</>
 		),
 		link: "https://leetcode.com/problems/search-a-2d-matrix/",
 		date: "2026-01-26",
+	},
+	{
+		id: "count-good-nodes-in-binary-tree",
+		title: "1448. Count Good Nodes in Binary Tree",
+		topic: "Binary Tree - DFS",
+		takeaway: (
+			<>
+				Goes through the graph using depth-first-search then keep track of the max at each node by replace it's value with the current max.
+			</>
+		),
+		link: "https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75/",
+		date: "2026-01-31",
 	},
 ];
