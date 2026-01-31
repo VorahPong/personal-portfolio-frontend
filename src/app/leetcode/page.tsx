@@ -1,5 +1,8 @@
 import Footer from "../components/main-page/footer";
 import Link from "next/link";
+import NotesSection from "../components/leetcode-page/NotesSection";
+import { notes } from "../components/leetcode-page/leetcode-note";
+
 
 type LeetCodeStats = {
 	userName: string;
@@ -15,65 +18,9 @@ type LeetCodeStats = {
 	ranking: number;
 };
 
-type Note = {
-	id: string;
-	title: string; // e.g. "853. Car Fleet"
-	topic?: string; // e.g. "Stack / Monotonic stack"
-	takeaway: React.ReactNode; // 1–2 sentences
-	link?: string; // optional leetcode link
-	date?: string; // optional "2026-01-20"
-};
-
-const notes: Note[] = [
-	{
-		id: "car-fleet",
-		title: "853. Car Fleet",
-		topic: "Stack (Monotonic)",
-		takeaway:
-			"Sort cars by position descending, compute time-to-target (target - position) / speed, and use a stack to count fleets.",
-		link: "https://leetcode.com/problems/car-fleet/",
-		date: "2026-01-20",
-	},
-	{
-		id: "largest-rectangle-in-histogram",
-		title: "84. Largest Rectangle in Histogram",
-		topic: "Stack",
-		takeaway:
-			"Use a monotonic increasing stack to compute maximal contiguous areas in O(n) by delaying area calculation until boundaries are known.",
-		link: "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-		date: "2026-01-22",
-	},
-	{
-		id: "binary-search",
-		title: "704. Binary Search",
-		topic: "Binary Search",
-		takeaway: (
-			<>
-				Formula: <code>low + (high - low) / 2</code>
-				<br />
-				Loop while <code>(low &lt;= high)</code>
-			</>
-		),
-		link: "https://leetcode.com/problems/binary-search/",
-		date: "2026-01-24",
-	},
-		{
-		id: "search-a-2d-matrix",
-		title: "74. Search a 2D Matrix",
-		topic: "Binary Search",
-		takeaway: (
-			<>
-				First go through every row to find the correct row where the target could be then perform binary search on that row.
-			</>
-		),
-		link: "https://leetcode.com/problems/search-a-2d-matrix/",
-		date: "2026-01-26",
-	},
-];
-
 export default async function LeetCodePage() {
 	const res = await fetch(
-		`https://leetcode-stats-api.herokuapp.com/vorahpong`,
+		`https://leetcode-stats.tashif.codes/vorahpong`,
 		{},
 	);
 
@@ -165,57 +112,7 @@ export default async function LeetCodePage() {
 					</div>
 				</div>
 
-				<section className="bg-[#282828] m-10 border-amber-200 border-r-2 rounded-2xl">
-					<div className="p-8">
-						<div className="flex items-center justify-between">
-							<h2 className="text-2xl font-bold text-amber-300">Notes</h2>
-							<span className="text-sm text-white/50">
-								{notes.length} {notes.length === 1 ? "note" : "notes"}
-							</span>
-						</div>
-
-						<div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-							{notes.map((n) => (
-								<div
-									key={n.id}
-									className="rounded-xl border border-white/10 bg-black/20 p-5 hover:bg-black/30 transition"
-								>
-									<div className="flex items-start justify-between gap-3">
-										<div>
-											<div className="text-white font-semibold">{n.title}</div>
-											{n.topic && (
-												<div className="mt-1 text-xs text-white/50">
-													{n.topic}
-												</div>
-											)}
-										</div>
-
-										{n.date && (
-											<span className="text-xs text-white/40 whitespace-nowrap">
-												{n.date}
-											</span>
-										)}
-									</div>
-
-									<p className="mt-4 text-sm text-[#bebfc2] leading-relaxed">
-										{n.takeaway}
-									</p>
-
-									{n.link && (
-										<Link
-											href={n.link}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="mt-4 inline-block text-sm text-amber-200 hover:underline"
-										>
-											View problem →
-										</Link>
-									)}
-								</div>
-							))}
-						</div>
-					</div>
-				</section>
+				<NotesSection notes={notes} perPage={6} />
 			</main>
 			<Footer />
 		</div>
