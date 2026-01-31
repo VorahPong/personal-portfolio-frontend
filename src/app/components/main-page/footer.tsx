@@ -24,7 +24,7 @@ export default function Footer() {
 
 			<div className="mt-2">
 				<span className="italic">
-					Last updated: Jan 26, 2026
+					Last updated: Jan 31, 2026
 				</span>
 			</div>
 		</footer>
