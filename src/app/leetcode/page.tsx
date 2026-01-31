@@ -73,7 +73,7 @@ const notes: Note[] = [
 
 export default async function LeetCodePage() {
 	const res = await fetch(
-		`https://leetcode-stats.tashif.codes//vorahpong`,
+		`https://leetcode-stats.tashif.codes/vorahpong`,
 		{},
 	);
 
