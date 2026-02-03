@@ -67,4 +67,16 @@ export const notes: Note[] = [
 		link: "https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75/",
 		date: "2026-01-31",
 	},
+		{
+		id: "binary-tree-right-side-view",
+		title: "199. Binary Tree Right Side View",
+		topic: "Binary Tree - BFS",
+		takeaway: (
+			<>
+				Uses breadth-first-search to traverse the tree level by level, add the rightmost node of each level to the result.
+			</>
+		),
+		link: "https://leetcode.com/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=leetcode-75",
+		date: "2026-02-03",
+	},
 ];
