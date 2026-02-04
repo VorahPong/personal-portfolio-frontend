@@ -61,22 +61,38 @@ export const notes: Note[] = [
 		topic: "Binary Tree - DFS",
 		takeaway: (
 			<>
-				Goes through the graph using depth-first-search then keep track of the max at each node by replace it's value with the current max.
+				Goes through the graph using depth-first-search then keep track of the
+				max at each node by replace it's value with the current max.
 			</>
 		),
 		link: "https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75/",
 		date: "2026-01-31",
 	},
-		{
+	{
 		id: "binary-tree-right-side-view",
 		title: "199. Binary Tree Right Side View",
 		topic: "Binary Tree - BFS",
 		takeaway: (
 			<>
-				Uses breadth-first-search to traverse the tree level by level, add the rightmost node of each level to the result.
+				Uses breadth-first-search to traverse the tree level by level, add the
+				rightmost node of each level to the result.
 			</>
 		),
 		link: "https://leetcode.com/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=leetcode-75",
 		date: "2026-02-03",
+	},
+	{
+		id: "maximum-level-sum-of-binary-tree",
+		title: "1161. Maximum Level Sum of a Binary Tree",
+		topic: "Binary Tree - BFS",
+		takeaway: (
+			<>
+				Traverse the tree level by level using breadth-first-search while
+				calculating the sum of each level, keep track of the maximum sum and
+				corresponding level.
+			</>
+		),
+		link: "https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75",
+		date: "2026-02-04",
 	},
 ];
