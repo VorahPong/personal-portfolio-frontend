@@ -13,7 +13,6 @@ main {
 	flex: 1;
 }
 
-
 /************************ Animation for arrows going up and down *****************************/
 @keyframes floatY {
 	0%,
@@ -50,10 +49,28 @@ main {
 }
 
 .hover-pause {
-  animation-play-state: running;
+	animation-play-state: running;
 }
 .hover-pause:hover {
-  animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+/* ******************************** Animation of background ************************************ */
+.animated-bg {
+	background-image: url("/assets/background.svg");
+	background-repeat: repeat-x;
+	background-size: 1200px;
+	background-position: 0 0;
+	animation: moveBackground 60s linear infinite;
+}
+
+@keyframes moveBackground {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: -2000px 0;
+	}
 }
 
 /* ******************************************************************** */
