@@ -72,8 +72,8 @@ export default function NavigationBar() {
 					<Image
 						src="/assets/logo/github.svg"
 						alt="GitHub Icon"
-						width={30}
-						height={30}
+						width={35}
+						height={35}
 						className="hover:opacity-80 transition duration-200 hover:scale-110"
 					/>
 				</Link>
