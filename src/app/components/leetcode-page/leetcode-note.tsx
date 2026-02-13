@@ -95,17 +95,31 @@ export const notes: Note[] = [
 		link: "https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75",
 		date: "2026-02-04",
 	},
-		{
+	{
 		id: "palindrome-number",
 		title: "9. Palindrome Number",
 		topic: "Math",
 		takeaway: (
 			<>
-				Reverse the number and compare it with the original number. Grab last digit by <code>n % 10</code> and build the reversed number by <code>reversed = reversed * 10 + lastDigit</code>.
+				Reverse the number and compare it with the original number. Grab last
+				digit by <code>n % 10</code> and build the reversed number by{" "}
+				<code>reversed = reversed * 10 + lastDigit</code>.
 				<br />
 			</>
 		),
 		link: "https://leetcode.com/problems/palindrome-number/",
 		date: "2026-02-12",
+	},
+	{
+		id: "number-of-provinces",
+		title: "547. Number of Provinces",
+		topic: "Graph - DFS",
+		takeaway: (
+			<>
+				Well, I didn't do this one with DFS, but the idea is to merge connected nodes into a single province and return the size of the resulting provinces.
+			</>
+		),
+		link: "https://leetcode.com/problems/number-of-provinces/",
+		date: "2026-02-13",
 	},
 ];
