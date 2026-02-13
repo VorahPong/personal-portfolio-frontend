@@ -3,7 +3,6 @@ import Link from "next/link";
 import NotesSection from "../components/leetcode-page/NotesSection";
 import { notes } from "../components/leetcode-page/leetcode-note";
 
-
 type LeetCodeStats = {
 	userName: string;
 	totalSolved: number;
@@ -19,10 +18,7 @@ type LeetCodeStats = {
 };
 
 export default async function LeetCodePage() {
-	const res = await fetch(
-		`https://leetcode-stats.tashif.codes/vorahpong`,
-		{},
-	);
+	const res = await fetch(`https://leetcode-stats.tashif.codes/vorahpong`, {});
 
 	if (!res.ok)
 		return (
@@ -48,51 +44,43 @@ export default async function LeetCodePage() {
 
 							<Link
 								href="https://leetcode.com/u/VORAHPONG/"
-								rel="noopener noreferrer"
 								target="_blank"
+								rel="noopener noreferrer"
 								aria-label="LeetCode Profile"
+								className="inline-flex items-center px-2 border border-orange-400 text-orange-400 rounded-lg backdrop-blur-sm hover:bg-orange-400 hover:text-black transition-all duration-300 text-sm font-medium"
 							>
-								<span className="text-gray-300 text-sm hover:underline">
-									https://leetcode.com/u/VORAHPONG/
-								</span>
+								View Profile
 							</Link>
 						</div>
 
-						<div>
-							<p className="text-[#bebfc2] text-1xl mt-5">
-								Rank{" "}
-								<span className="text-white font-semibold">
-									{stats.ranking}
-								</span>
-							</p>
-						</div>
-
-						<div className="mt-4 grid grid-cols-3 gap-3 text-sm">
-							<div className="p-3 rounded-xl border bg-green-900">
+						{/* Difficulty cards: 1 col on very small, 3 cols on sm+ */}
+						<div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+							<div className="p-4 sm:p-3 rounded-xl border border-white/10 bg-green-900/60">
 								<div className="font-semibold text-[#1cbbba]">Easy</div>
-								<div>
+								<div className="mt-1">
 									{stats.easySolved}/{stats.totalEasy}
 								</div>
 							</div>
-							<div className="p-3 rounded-xl border bg-yellow-900">
+							<div className="p-4 sm:p-3 rounded-xl border border-white/10 bg-yellow-900/60">
 								<div className="font-semibold text-[#ffb700]">Medium</div>
-								<div>
+								<div className="mt-1">
 									{stats.mediumSolved}/{stats.totalMedium}
 								</div>
 							</div>
-							<div className="p-3 rounded-xl border bg-red-900">
+							<div className="p-4 sm:p-3 rounded-xl border border-white/10 bg-red-900/60">
 								<div className="font-semibold text-[#f53838]">Hard</div>
-								<div>
+								<div className="mt-1">
 									{stats.hardSolved}/{stats.totalHard}
 								</div>
 							</div>
 						</div>
 
-						<div className="flex flex-row justify-between">
+						{/* Bottom row: stack on mobile */}
+						<div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
 							<div>
-								<div className="mt-4 text-3xl font-bold">
+								<div className="text-2xl sm:text-3xl font-bold">
 									{stats.totalSolved}{" "}
-									<span className="text-base font-medium opacity-70">
+									<span className="text-sm sm:text-base font-medium opacity-70">
 										solved
 									</span>
 								</div>
@@ -100,9 +88,11 @@ export default async function LeetCodePage() {
 									{stats.totalSolved}/{stats.totalQuestions} ({pct}%)
 								</div>
 							</div>
-							<div className="mt-4 text-sm opacity-80">
+
+							<div className="text-sm opacity-80 sm:text-right leading-relaxed">
 								Acceptance:{" "}
-								<span className="font-medium">{stats.acceptanceRate}%</span> •
+								<span className="font-medium">{stats.acceptanceRate}%</span>
+								<br />
 								Ranking:{" "}
 								<span className="font-medium">
 									{stats.ranking.toLocaleString()}

@@ -8,26 +8,26 @@ export default function NavigationBar() {
 	const pathname = usePathname();
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 	return (
-		<nav className="w-full border-b-2 border-black flex justify-between items-center bg-white px-8 py-4 text-lg font-semibold text-white shadow-md">
+		<nav className="w-full border-b-2 border-black flex justify-between items-center bg-white px-4 py-3 sm:py-1 text-lg font-semibold text-white shadow-md">
 			{/* Left Section */}
 			<div className="flex gap-8 items-center">
 				{/* Settings Button */}
 				<button
-						onClick={() => setIsSidebarOpen(true)}
-						aria-label="Open Settings Sidebar"
-						className="p-2 rounded-md transition"
-					>
-						<Image
-							src="/assets/setting-button2.png"
-							alt="Settings Icon"
-							width={30}
-							height={30}
-							className="hover:scale-110 transition-transform duration-300"
-						/>
-					</button>
+					onClick={() => setIsSidebarOpen(true)}
+					aria-label="Open Settings Sidebar"
+					className="p-2 rounded-md transition"
+				>
+					<Image
+						src="/assets/setting-button2.png"
+						alt="Settings Icon"
+						width={30}
+						height={30}
+						className="hover:scale-110 transition-transform duration-300 w-7 h-7"
+					/>
+				</button>
 
-
-				<div className="flex gap-2 text-black">
+				{/* Hide on Desktop screen size */}
+				<div className="hidden sm:flex gap-2 text-black">
 					<Link
 						href="/"
 						className={`transition-colors duration-200 px-2 ${
@@ -58,6 +58,11 @@ export default function NavigationBar() {
 					>
 						LeetCode
 					</Link>
+				</div>
+
+				{/* Mobile page label */}
+				<div className="sm:hidden text-black truncate">
+					{pathname === "/" ? "Home" : pathname.replace("/", "").toUpperCase()}
 				</div>
 			</div>
 
@@ -99,6 +104,7 @@ export default function NavigationBar() {
 				<div
 					className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
 					onClick={() => setIsSidebarOpen(false)}
+					aria-hidden="true"
 				></div>
 			)}
 
@@ -124,21 +130,50 @@ export default function NavigationBar() {
 					<Link
 						href="/"
 						onClick={() => setIsSidebarOpen(false)}
-						className="hover:text-amber-300 transition"
+						className={`hover:text-amber-300 transition ${
+							pathname === "/" ? "text-amber-300" : ""
+						}`}
 					>
 						🏠 Home
 					</Link>
 					<Link
 						href="/resume"
 						onClick={() => setIsSidebarOpen(false)}
-						className="hover:text-amber-300 transition"
+						className={`hover:text-amber-300 transition ${
+							pathname === "/resume" ? "text-amber-300" : ""
+						}`}
 					>
 						📄 Resume
 					</Link>
+					<Link
+						href="/leetcode"
+						onClick={() => setIsSidebarOpen(false)}
+						className={`hover:text-amber-300 transition ${
+							pathname === "/leetcode" ? "text-amber-300" : ""
+						}`}
+					>
+						💻 LeetCode
+					</Link>
+
 					<hr className="border-gray-700 my-2" />
-					{/* <p className="text-gray-400 text-sm">
-						(In-progress)
-					</p> */}
+
+					<Link
+						href="https://github.com/VorahPong"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="hover:text-amber-300 transition"
+					>
+						🐙 GitHub
+					</Link>
+
+					<Link
+						href="https://www.linkedin.com/in/vorahpong-mean-44a960300/"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="hover:text-amber-300 transition"
+					>
+						💼 LinkedIn
+					</Link>
 				</div>
 			</div>
 		</nav>
