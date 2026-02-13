@@ -15,13 +15,13 @@ export default function NavigationBar() {
 				<button
 						onClick={() => setIsSidebarOpen(true)}
 						aria-label="Open Settings Sidebar"
-						className="p-2 rounded-md hover:bg-amber-100 transition"
+						className="p-2 rounded-md transition"
 					>
 						<Image
-							src="/assets/setting-button.svg"
+							src="/assets/setting-button2.png"
 							alt="Settings Icon"
-							width={24}
-							height={24}
+							width={30}
+							height={30}
 							className="hover:scale-110 transition-transform duration-300"
 						/>
 					</button>
