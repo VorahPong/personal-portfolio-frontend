@@ -136,4 +136,16 @@ export const notes: Note[] = [
 		link: "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/description/?envType=study-plan-v2&envId=leetcode-75/",
 		date: "2026-02-20",
 	},
+	{
+		id: "rotting-oranges",
+		title: "994. Rotting Oranges",
+		topic: "Graph - BFS",
+		takeaway: (
+			<>
+				Use queue to do breadth-first-search, mark each visited cell to '2' to avoid cycle. Check if the graph are empty and add initial rotten oranges into bfs queue. Return the number of rounds of bfs needed to rot all oranges, or -1 if there are still fresh oranges left.
+			</>
+		),
+		link: "https://leetcode.com/problems/rotting-oranges/description/?envType=study-plan-v2&envId=leetcode-75/",
+		date: "2026-02-20",
+	},
 ];
