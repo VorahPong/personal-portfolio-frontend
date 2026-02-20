@@ -116,10 +116,36 @@ export const notes: Note[] = [
 		topic: "Graph - DFS",
 		takeaway: (
 			<>
-				Well, I didn't do this one with DFS, but the idea is to merge connected nodes into a single province and return the size of the resulting provinces.
+				Well, I didn't do this one with DFS, but the idea is to merge connected
+				nodes into a single province and return the size of the resulting
+				provinces.
 			</>
 		),
 		link: "https://leetcode.com/problems/number-of-provinces/",
 		date: "2026-02-13",
+	},
+	{
+		id: "nearest-exit-from-entrance-in-maze",
+		title: "1926. Nearest Exit from Entrance in Maze",
+		topic: "Graph - BFS",
+		takeaway: (
+			<>
+				Use queue to do breadth-first-search, mark each visited cell to '+' to avoid cycle. Don't count the entrance as an exit if it's on the border.
+			</>
+		),
+		link: "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/description/?envType=study-plan-v2&envId=leetcode-75/",
+		date: "2026-02-20",
+	},
+	{
+		id: "rotting-oranges",
+		title: "994. Rotting Oranges",
+		topic: "Graph - BFS",
+		takeaway: (
+			<>
+				Use queue to do breadth-first-search, mark each visited cell to '2' to avoid cycle. Check if the graph are empty and add initial rotten oranges into bfs queue. Return the number of rounds of bfs needed to rot all oranges, or -1 if there are still fresh oranges left.
+			</>
+		),
+		link: "https://leetcode.com/problems/rotting-oranges/description/?envType=study-plan-v2&envId=leetcode-75/",
+		date: "2026-02-20",
 	},
 ];

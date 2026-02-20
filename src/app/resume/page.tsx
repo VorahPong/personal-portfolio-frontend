@@ -12,7 +12,7 @@ export default function ResumePage() {
 					<div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
 						<h1 className="text-base sm:text-lg">
 							Last updated:{" "}
-							<span className="font-semibold text-amber-300">Jan 20, 2026</span>
+							<span className="font-semibold text-amber-300">Feb 20, 2026</span>
 						</h1>
 
 						<div className="flex flex-col sm:flex-row gap-3">
