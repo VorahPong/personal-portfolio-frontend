@@ -16,7 +16,7 @@ export default function Body() {
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 60 }}
-			whileInView={{ opacity: 1, y: 0 }}
+			animate={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.2 }}
 			transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
 			className="w-full h-full flex flex-col items-center py-10 sm:px-0 sm:py-20"
@@ -26,8 +26,8 @@ export default function Body() {
 				<div className="flex flex-col md:flex-row items-center justify-center gap-10">
 					{/* Profile Card */}
 					<motion.div
-						initial={{ opacity: 0, x: -120 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, x: -90 }}
+						animate={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.2 }}
 						transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
 						className="relative w-full md:w-85 h-fit py-5 bg-gray-100 border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-102 transition"
@@ -59,12 +59,13 @@ export default function Body() {
 							<>
 								<div className="w-full mt-3 h-px bg-black/30 shadow-2xl" />
 								<p className="text-sm mt-3 text-gray-700 m-4">
-									Age: 21 <br />
 									School: Cameron University <br />
 									Graduation: May 2026 <br />
-									Focus: Full-Stack & Front-End Development <br />
-									Tech Stack: Next.js, React, Tailwind, MongoDB, PostgreSQL <br />
-									Location: Lawton, OK (Open to move)
+									Focus: Software Engineering & Full-Stack Development <br />
+									Languages: C++, Python, JavaScript <br />
+									Technologies: Next.js, React, Node.js, MongoDB, PostgreSQL{" "}
+									<br />
+									Location: Lawton, OK (Open to relocate)
 								</p>
 								<button
 									className="w-full mt-2 text-xs text-gray-500 hover:scale-110 transition"
@@ -81,18 +82,29 @@ export default function Body() {
 					</motion.div>
 					{/* Note Card */}
 					<motion.div
-						initial={{ opacity: 0, x: 120 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, x: 90 }}
+						animate={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.2 }}
 						transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
 						className="bg-gray-100 w-96 h-fit py-5 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center hover:scale-102 transition"
 					>
-						<h3 className="text-xl font-semibold text-gray-800 mb-2">About Me</h3>
-						<p className="text-gray-600 leading-relaxed">
+						<h3 className="text-xl font-semibold text-gray-800 mb-2">
+							About Me
+						</h3>
+
+						{/* <p className="text-gray-600 leading-relaxed">
 							Hello! I’m Vorahpong Mean, a Computer Science student passionate
 							about full-stack development and UI/UX design. I enjoy building
 							interactive web apps and learning new technologies.
+						</p> */}
+
+						<p className="text-gray-600 leading-relaxed">
+							Hello! I’m a Computer Science student passionate about software
+							development, systems programming, and building interactive
+							applications. I enjoy working across the stack, from modern web
+							technologies to problem-solving with C++ and algorithms.
 						</p>
+
 						{/* <button
 							className={`${showMoreDescription ? 'hidden' : 'block'} text-xs text-gray-500 mt-2 hover:scale-110`}
 							onClick={() => {
