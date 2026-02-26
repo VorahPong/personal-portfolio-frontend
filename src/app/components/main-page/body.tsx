@@ -16,7 +16,7 @@ export default function Body() {
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 60 }}
-			whileInView={{ opacity: 1, y: 0 }}
+			animate={{ opacity: 1, y: 0 }}
 			viewport={{ once: true, amount: 0.2 }}
 			transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
 			className="w-full h-full flex flex-col items-center py-10 sm:px-0 sm:py-20"
@@ -26,8 +26,8 @@ export default function Body() {
 				<div className="flex flex-col md:flex-row items-center justify-center gap-10">
 					{/* Profile Card */}
 					<motion.div
-						initial={{ opacity: 0, x: -120 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, x: -90 }}
+						animate={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.2 }}
 						transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
 						className="relative w-full md:w-85 h-fit py-5 bg-gray-100 border-4 border-yellow-400 rounded-xl shadow-lg flex flex-col items-center justify-center hover:scale-102 transition"
@@ -81,8 +81,8 @@ export default function Body() {
 					</motion.div>
 					{/* Note Card */}
 					<motion.div
-						initial={{ opacity: 0, x: 120 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, x: 90 }}
+						animate={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, amount: 0.2 }}
 						transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
 						className="bg-gray-100 w-96 h-fit py-5 border-2 border-gray-300 rounded-xl shadow-md p-6 flex flex-col justify-center hover:scale-102 transition"
