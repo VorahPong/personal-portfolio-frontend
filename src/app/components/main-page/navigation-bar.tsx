@@ -8,7 +8,7 @@ export default function NavigationBar() {
 	const pathname = usePathname();
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 	return (
-		<nav className="w-full border-b-2 border-black flex justify-between items-center bg-white px-4 py-3 sm:py-1 text-lg font-semibold text-white shadow-md">
+		<nav className="sticky top-0 z-60 w-full border-b-2 border-black flex justify-between items-center bg-white px-4 py-3 sm:py-1 text-lg font-semibold text-white shadow-md">
 			{/* Left Section */}
 			<div className="flex gap-8 items-center">
 				{/* Settings Button */}
