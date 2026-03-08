@@ -7,6 +7,13 @@ export default function PageVisitTracker() {
 	const pathname = usePathname();
 
 	useEffect(() => {
+		// page to exclude
+		const excludedRoutes = ["/analysis"];
+
+		if (excludedRoutes.some((route) => pathname.startsWith(route))) {
+			return;
+		}
+
 		const today = new Date().toISOString().split("T")[0];
 		const storageKey = `tracked:${pathname}:${today}`;
 
