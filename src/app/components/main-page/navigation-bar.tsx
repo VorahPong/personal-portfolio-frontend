@@ -154,6 +154,15 @@ export default function NavigationBar() {
 					>
 						💻 LeetCode
 					</Link>
+					<Link
+						href="/analysis"
+						onClick={() => setIsSidebarOpen(false)}
+						className={`hover:text-amber-300 transition ${
+							pathname === "/analysis" ? "text-amber-300" : ""
+						}`}
+					>
+						📊 Analysis
+					</Link>
 
 					<hr className="border-gray-700 my-2" />
 

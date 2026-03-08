@@ -1,20 +1,25 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import clientPromise from "@/app/lib/mongodb";
 
-export async function POST() {
+export async function POST(req: NextRequest) {
 	try {
+		const body = await req.json();
+		const path = body.path || "/";
+
 		const client = await clientPromise;
 		const db = client.db(process.env.MONGODB_DB);
 
 		const today = new Date().toISOString().split("T")[0];
 
-		const visitsCollection = db.collection("daily_visits");
-
-		await visitsCollection.updateOne(
-			{ date: today },
+		await db.collection("page_visits").updateOne(
+			{ date: today, path },
 			{
 				$inc: { count: 1 },
-				$setOnInsert: { date: today, createdAt: new Date() },
+				$setOnInsert: {
+					date: today,
+					path,
+					createdAt: new Date(),
+				},
 			},
 			{ upsert: true },
 		);
@@ -24,30 +29,6 @@ export async function POST() {
 		console.error("Track visit error:", error);
 		return NextResponse.json(
 			{ success: false, message: "Failed to track visit" },
-			{ status: 500 },
-		);
-	}
-}
-
-export async function GET() {
-	try {
-		const client = await clientPromise;
-		const db = client.db(process.env.MONGODB_DB);
-		const today = new Date().toISOString().split("T")[0];
-
-		const todayVisit = await db
-			.collection("daily_visits")
-			.findOne({ date: today });
-
-		return NextResponse.json({
-			success: true,
-			date: today,
-			count: todayVisit?.count ?? 0,
-		});
-	} catch (error) {
-		console.error("Get visit count error:", error);
-		return NextResponse.json(
-			{ success: false, message: "Failed to get visit count" },
 			{ status: 500 },
 		);
 	}
