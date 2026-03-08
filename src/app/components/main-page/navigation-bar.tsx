@@ -58,6 +58,16 @@ export default function NavigationBar() {
 					>
 						LeetCode
 					</Link>
+					<Link
+						href="/analysis"
+						className={`transition-colors duration-200 px-2 ${
+							pathname === "/analysis"
+								? "bg-amber-200 rounded-md"
+								: "hover:text-yellow-400"
+						}`}
+					>
+						Analysis
+					</Link>
 				</div>
 
 				{/* Mobile page label */}
@@ -153,6 +163,15 @@ export default function NavigationBar() {
 						}`}
 					>
 						💻 LeetCode
+					</Link>
+					<Link
+						href="/analysis"
+						onClick={() => setIsSidebarOpen(false)}
+						className={`hover:text-amber-300 transition ${
+							pathname === "/analysis" ? "text-amber-300" : ""
+						}`}
+					>
+						📊 Analysis
 					</Link>
 
 					<hr className="border-gray-700 my-2" />
