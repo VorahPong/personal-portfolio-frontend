@@ -11,7 +11,7 @@ export default function WorkTutorCard() {
 					Tutor — Cameron University | Lawton, OK
 				</h3>
 				<span className="text-sm text-gray-300 font-medium">
-					Feb 2025 – Present
+					Feb 2025 – May 2026
 				</span>
 			</div>
 

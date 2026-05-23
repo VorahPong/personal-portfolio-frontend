@@ -27,7 +27,7 @@ export default function WorkAgripellerCard() {
 						</span>
 					</h3>
 					<span className="text-sm text-gray-300 font-medium">
-						June 2025 – Present
+						June – October 2025
 					</span>
 				</div>
 				{/* Divider */}
