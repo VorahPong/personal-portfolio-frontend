@@ -19,24 +19,33 @@ export default function Project3DConnectFourCard() {
 		>
 			<MotionCard>
 				{/* Header */}
-				<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
-					<h3 className="text-lg font-semibold tracking-wide">
-						3D Connect Four Game{" "}
-						<span className="font-semibold text-amber-300">(CS Capstone)</span>{" "}
-						|{" "}
-						<span className="font-semibold text-amber-300">
-							Unity, C#, Blender
-						</span>
-					</h3>
-					{/* Github link */}
-					<a
-						href="https://github.com/VorahPong/ConnectFourUnity"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-sm text-green-300 font-bold hover:text-white"
-					>
-						🔗 View on GitHub
-					</a>
+				<div className="flex flex-col gap-3 mb-2">
+					<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3">
+						<h3 className="text-lg font-semibold tracking-wide leading-relaxed max-w-3xl">
+							3D Connect Four Game{" "}
+							<span className="font-semibold text-amber-300">(CS Capstone)</span>{" "}
+							|{" "}
+							<span className="font-semibold text-amber-300">
+								Unity, C#, Blender
+							</span>
+						</h3>
+
+						<div className="flex items-center gap-3 self-start lg:self-center">
+							<span className="px-3 py-1 text-xs font-semibold tracking-wide uppercase rounded-full bg-amber-400/10 border border-amber-400/40 text-amber-200 whitespace-nowrap">
+								2025
+							</span>
+
+							<a
+								href="https://github.com/VorahPong/ConnectFourUnity"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-400/40 bg-green-400/10 text-sm font-semibold text-green-300 hover:bg-green-400/20 hover:text-white transition-all duration-300"
+							>
+								<span>🔗</span>
+								<span>View on GitHub</span>
+							</a>
+						</div>
+					</div>
 				</div>
 				{/* Divider */}
 				<div className="w-full h-[1px] bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 mb-3 rounded-full opacity-70"></div>
@@ -49,7 +58,7 @@ export default function Project3DConnectFourCard() {
 					actions.
 				</p>
 				{/* Some Images to show the website */}
-				
+
 				{/* Show more feature */}
 				<Image
 					src="/assets/card/arrow_down_vector.svg"

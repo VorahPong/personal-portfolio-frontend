@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import Project3DConnectFourCard from "./projects-cards/3dconnect-card";
 import GodotCard from "./projects-cards/godotgame-card";
 import { useState } from "react";
+import CUPlusCard from "./projects-cards/cuplus-card";
+import STM32Card from "./projects-cards/stm32-card";
 
 export default function Body() {
 	const [showMoreProfile, setShowMoreProfile] = useState(false);
@@ -60,7 +62,7 @@ export default function Body() {
 								<div className="w-full mt-3 h-px bg-black/30 shadow-2xl" />
 								<p className="text-sm mt-3 text-gray-700 m-4">
 									School: Cameron University <br />
-									Graduation: May 2026 <br />
+									Graduated: May 2026 <br />
 									Focus: Software Engineering & Full-Stack Development <br />
 									Languages: C++, Python, JavaScript <br />
 									Technologies: Next.js, React, Node.js, MongoDB, PostgreSQL{" "}
@@ -162,6 +164,10 @@ export default function Body() {
 				<div className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 w-[85%] h-0.5 mb-6 rounded-full shadow-md"></div>
 
 				{/* Cards Section */}
+				<CUPlusCard/>
+				<div className="mt-10" />
+				<STM32Card/>
+				<div className="mt-10" />
 				<GodotCard />
 				<div className="mt-10" />
 				<ProjectCapstoneCard />
