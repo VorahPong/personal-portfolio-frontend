@@ -23,7 +23,7 @@ export default function STM32Card() {
 					<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3">
 						<div>
 							<h3 className="text-xl font-semibold tracking-wide leading-snug">
-								STM32 Microcontroller Project
+								STM32 Morse Code Transcriber
 							</h3>
 							<p className="mt-1 text-sm font-medium text-amber-300">
 								Embedded Systems · Hardware-Level Programming
@@ -35,15 +35,15 @@ export default function STM32Card() {
 								2026
 							</span>
 
-							{/* <a
-								href="https://github.com/VorahPong/CU_PLUS_WEBAPP"
+							<a
+								href="https://github.com/VorahPong/STM32-MorseCodeTranscribe"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-400/40 bg-green-400/10 text-sm font-semibold text-green-300 hover:bg-green-400/20 hover:text-white transition-all duration-300"
 							>
 								<span>🔗</span>
 								<span>View on GitHub</span>
-							</a> */}
+							</a>
 						</div>
 					</div>
 
@@ -53,8 +53,9 @@ export default function STM32Card() {
 							"STM32 HAL",
 							"STM32CubeIDE",
 							"GPIO",
-							"Timers",
-							"PWM",
+							"Button Input",
+							"7-Segment Display",
+							"State Machine",
 							"ST-LINK Debugger",
 						].map((tech) => (
 							<span
@@ -70,57 +71,85 @@ export default function STM32Card() {
 				<div className="w-full h-[1px] bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 mb-3 rounded-full opacity-70"></div>
 				{/* Description */}
 				<p className="text-sm leading-relaxed text-gray-200">
-					Built and tested embedded firmware on the STM32 Nucleo-F401RE to strengthen
-					my understanding of low-level programming, peripheral configuration, and
-					hardware debugging. Implemented GPIO-based LED control, timer-driven delays,
-					PWM LED dimming, and Morse code signaling patterns using C and the STM32 HAL
-					framework. Configured STM32 peripherals such as GPIO pins and TIM2 through
-					STM32CubeIDE, then flashed and debugged the firmware on physical hardware
-					using the ST-LINK debugger. This project helped me practice writing code that
-					interacts directly with microcontroller hardware and validating behavior
-					through hands-on testing.
+					An embedded systems project built on the STM32 Nucleo-F401RE using C and the STM32 HAL framework. The system reads Morse code input from the onboard B1 push button, classifies short and long presses as dots and dashes, stores the sequence in firmware, and displays the translated alphabet character on a common-anode 7-segment display.
 				</p>
-				{/* Some Images to show the website */}
+
+				<div className="mt-4 grid gap-3 lg:grid-cols-3">
+					<div className="rounded-lg border border-white/10 bg-black/20 p-3">
+						<p className="text-xs font-semibold uppercase tracking-wide text-amber-300">
+							Input
+						</p>
+						<p className="mt-1 text-sm text-gray-300">
+							Uses the onboard B1 button with software debouncing and press-duration timing to detect Morse code dots and dashes.
+						</p>
+					</div>
+
+					<div className="rounded-lg border border-white/10 bg-black/20 p-3">
+						<p className="text-xs font-semibold uppercase tracking-wide text-amber-300">
+							Processing
+						</p>
+						<p className="mt-1 text-sm text-gray-300">
+							Implements a small state machine to track button states, timing gaps, and Morse sequences before translating them into letters.
+						</p>
+					</div>
+
+					<div className="rounded-lg border border-white/10 bg-black/20 p-3">
+						<p className="text-xs font-semibold uppercase tracking-wide text-amber-300">
+							Output
+						</p>
+						<p className="mt-1 text-sm text-gray-300">
+							Controls GPIO pins connected to a common-anode 7-segment display to show the translated alphabet character.
+						</p>
+					</div>
+				</div>
+
+				<div className="mt-4 rounded-lg border border-amber-400/20 bg-amber-400/5 p-4">
+					<p className="text-sm font-semibold text-amber-200">Current project status</p>
+					<p className="mt-1 text-sm leading-relaxed text-gray-300">
+						This project is actively being developed. The current version focuses on GPIO-based button input, Morse pattern storage, button timing logic, and 7-segment display output. I plan to add a demo video and hardware photos soon.
+					</p>
+				</div>
 
 				{/* Show more feature */}
-				{/* <Image
-					src="/assets/card/arrow_down_vector.svg"
-					alt="Arrow Up to collapse"
-					width={50}
-					height={50}
-					className={`${
-						showMore && "hidden"
-					} animate-float-up mt-5 ml-auto mr-auto animate-bounce-slow hover:scale-110 transition-transform duration-700 hover-pause`}
-					onClick={() => {
-						setShowMore(true);
-					}}
-				/> */}
+				{!showMore && (
+					<Image
+						src="/assets/card/arrow_down_vector.svg"
+						alt="Arrow down to view project details"
+						width={50}
+						height={50}
+						className="animate-float-up mt-5 ml-auto mr-auto animate-bounce-slow hover:scale-110 transition-transform duration-700 hover-pause cursor-pointer"
+						onClick={() => {
+							setShowMore(true);
+						}}
+					/>
+				)}
 				{showMore && (
 					<div className="flex flex-col items-center justify-center mt-5">
-						{/* <h3>Dashboard</h3>
-						<Image
-							src={"/assets/cuplus/dashboard.png"}
-							alt={"dashboard of CU Plus"}
-							width={600}
-							height={600}
-						/> */}
-						{/* <h3 className="mt-5">Look of the game</h3>
-						<Image
-							src={"/assets/journeyaheadgame/gamelook.png"}
-							alt={"gameplay of journey ahead game"}
-							width={600}
-							height={600}
-						/> */}
+						<div className="w-full rounded-xl border border-white/10 bg-black/20 p-4">
+							<h4 className="text-lg font-semibold text-amber-200">Project Details</h4>
 
-						{/* <p className="mt-5 text-2xl">Some Features I had worked on:</p> */}
+							<ul className="mt-3 space-y-2 text-sm leading-relaxed text-gray-300 list-disc list-inside">
+								<li>Designed GPIO mappings for the B1 button, LD2 indicator LED, and 7-segment display segments.</li>
+								<li>Used `HAL_GetTick()` to measure button hold duration and distinguish dots from dashes.</li>
+								<li>Created a button state machine for debounce handling, press tracking, and character gap detection.</li>
+								<li>Implemented common-anode 7-segment logic where GPIO RESET turns a segment on and GPIO SET turns it off.</li>
+								<li>Practiced embedded debugging using STM32CubeIDE, ST-LINK, and live variable inspection.</li>
+							</ul>
+						</div>
 
-						{/* Collapse Arrow feature */}
+						<div className="mt-4 w-full rounded-xl border border-dashed border-amber-400/40 bg-black/10 p-5 text-center">
+							<p className="text-sm font-semibold text-amber-200">Demo media coming soon</p>
+							<p className="mt-1 text-sm text-gray-400">
+								I plan to add a short video demo and hardware photos showing the STM32 board, breadboard wiring, push-button input, and 7-segment display output.
+							</p>
+						</div>
+
 						<Image
 							src="/assets/card/arrow_down_vector.svg"
-							alt="Arrow Up to collapse"
+							alt="Arrow up to collapse project details"
 							width={50}
 							height={50}
-							className={`animate-float-down mt-5 transform rotate-180 animate-bounce-slow hover:scale-110 transition-transform duration-700 hover-pause`}
+							className="animate-float-down mt-5 transform rotate-180 animate-bounce-slow hover:scale-110 transition-transform duration-700 hover-pause cursor-pointer"
 							onClick={() => {
 								setShowMore(false);
 							}}
