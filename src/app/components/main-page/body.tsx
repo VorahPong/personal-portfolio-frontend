@@ -10,6 +10,7 @@ import GodotCard from "./projects-cards/godotgame-card";
 import { useState } from "react";
 import CUPlusCard from "./projects-cards/cuplus-card";
 import STM32Card from "./projects-cards/stm32-card";
+import NetworkSimulationCard from "./projects-cards/networksimulation-card";
 
 export default function Body() {
 	const [showMoreDescription, setShowMoreDescription] = useState(false);
@@ -151,6 +152,8 @@ export default function Body() {
 				<div className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 w-[85%] h-0.5 mb-6 rounded-full shadow-md"></div>
 
 				{/* Cards Section */}
+				<NetworkSimulationCard/>
+				<div className="mt-10" />
 				<STM32Card />
 				<div className="mt-10" />
 				<CUPlusCard />
@@ -160,6 +163,7 @@ export default function Body() {
 				<ProjectCapstoneCard />
 				<div className="mt-10" />
 				<Project3DConnectFourCard />
+				
 			</div>
 		</motion.div>
 	);
