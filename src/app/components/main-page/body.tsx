@@ -12,7 +12,6 @@ import CUPlusCard from "./projects-cards/cuplus-card";
 import STM32Card from "./projects-cards/stm32-card";
 
 export default function Body() {
-	const [showMoreProfile, setShowMoreProfile] = useState(false);
 	const [showMoreDescription, setShowMoreDescription] = useState(false);
 
 	return (
@@ -47,40 +46,18 @@ export default function Body() {
 							Vorahpong Mean
 						</p>
 						<p className="text-sm text-gray-500">Cameron University</p>
-						<button
-							onClick={() => {
-								setShowMoreProfile(true);
-							}}
-							className={` ${
-								showMoreProfile ? "hidden" : "block"
-							} text-xs text-gray-500 mt-2 hover:scale-110 transition`}
-						>
-							<span>See more...</span>
-						</button>
-						{showMoreProfile ? (
-							<>
-								<div className="w-full mt-3 h-px bg-black/30 shadow-2xl" />
-								<p className="text-sm mt-3 text-gray-700 m-4">
-									School: Cameron University <br />
-									Graduated: May 2026 <br />
-									Focus: Software Engineering & Full-Stack Development <br />
-									Languages: C++, Python, JavaScript <br />
-									Technologies: Next.js, React, Node.js, MongoDB, PostgreSQL{" "}
-									<br />
-									Location: Lawton, OK (Open to relocate)
-								</p>
-								<button
-									className="w-full mt-2 text-xs text-gray-500 hover:scale-110 transition"
-									onClick={() => {
-										setShowMoreProfile(false);
-									}}
-								>
-									<span>Show less...</span>
-								</button>
-							</>
-						) : (
-							<></>
-						)}
+						<div className="w-full mt-3 h-px bg-black/30 shadow-2xl" />
+						<p className="text-sm mt-3 text-gray-700 m-4">
+							School: Cameron University <br />
+							Graduated: Spring 2026 <br />
+							Degree: B.S. Computer Science <br />
+							GPA: 3.87 / 4.0 <br />
+							Focus: Software Engineering, Full-Stack Development, Networking,
+							Embedded Systems <br />
+							Languages: C, C++, Python, Dart, SQL, JavaScript <br />
+							Tools: AWS, Docker, Linux, Wireshark, tcpdump, GitHub <br />
+							Location: Lawton, OK (Open to relocate)
+						</p>
 					</motion.div>
 					{/* Note Card */}
 					<motion.div
@@ -94,18 +71,28 @@ export default function Body() {
 							About Me
 						</h3>
 
-						{/* <p className="text-gray-600 leading-relaxed">
-							Hello! I’m Vorahpong Mean, a Computer Science student passionate
-							about full-stack development and UI/UX design. I enjoy building
-							interactive web apps and learning new technologies.
-						</p> */}
-
 						<p className="text-gray-600 leading-relaxed">
-							Hello! I’m a Computer Science student passionate about software
-							development, systems programming, and building interactive
-							applications. I enjoy working across the stack, from modern web
-							technologies to problem-solving with C++ and algorithms.
+							Hello! I’m Vorahpong Mean, a recent Computer Science graduate from
+							Cameron University with hands-on experience in full-stack development,
+							embedded systems, networking, and cloud deployment. I enjoy building
+							practical software systems, from web applications and digital marketplaces
+							to STM32 firmware and UDP network simulations.
 						</p>
+
+						<div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4">
+							<span className="rounded-lg bg-white border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 shadow-sm">
+								Full-Stack Web Apps
+							</span>
+							<span className="rounded-lg bg-white border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 shadow-sm">
+								Embedded C / STM32
+							</span>
+							<span className="rounded-lg bg-white border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 shadow-sm">
+								UDP Sockets & Wireshark
+							</span>
+							<span className="rounded-lg bg-white border border-gray-200 px-3 py-2 text-xs font-semibold text-gray-700 shadow-sm">
+								AWS & Docker
+							</span>
+						</div>
 
 						{/* <button
 							className={`${showMoreDescription ? 'hidden' : 'block'} text-xs text-gray-500 mt-2 hover:scale-110`}
@@ -164,9 +151,9 @@ export default function Body() {
 				<div className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 w-[85%] h-0.5 mb-6 rounded-full shadow-md"></div>
 
 				{/* Cards Section */}
-				<CUPlusCard/>
+				<STM32Card />
 				<div className="mt-10" />
-				<STM32Card/>
+				<CUPlusCard />
 				<div className="mt-10" />
 				<GodotCard />
 				<div className="mt-10" />
